@@ -2,6 +2,17 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Introduction
+
+This project was created for the NextJS Frontend Intern task of TradeMarkia intern recruitment process. The app is created through ReactJS and OpenWeatherAPI.
+
+## Important Information
+
+The app has been hosted on [vercel](https://trademarkia-weather-app.vercel.app/).
+If the app is not able to display temperature and other details, there's a chance that the API key has **expired**, thus a new API key must be genereated.
+  * To insert a new API key, navigate to src > services > weatherServices.js, and replace "API_KEY" value with the new API Key.
+
+
 ## Available Scripts
 
 In the project directory, you can run:
