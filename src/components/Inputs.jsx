@@ -27,7 +27,7 @@ function Inputs({ setQuery }) {
 
   return (
     <div className="flex flex-row justify-center my-6">
-      <div className="flex flex-row w-3/4 items-center justify-center space-x-4">
+      <div className="block sm:flex flex-row w-fit md:w-3/4 items-center justify-center space-x-4">
         <input
           value={city}
           onChange={(e) => setCity(e.currentTarget.value)}
@@ -35,16 +35,20 @@ function Inputs({ setQuery }) {
           placeholder="Search for city...."
           className="text-xl font-light p-2 w-full shadow-xl focus:outline-none capitalize placeholder:lowercase"
         />
-        <UilSearch
-          size={25}
-          className="text-white cursor-pointer transition ease-out hover:scale-125"
-          onClick={handleSearchClick}
-        />
-        <UilLocationPoint
-          size={25}
-          className="text-white cursor-pointer transition ease-out hover:scale-125"
-          onClick={handleLocationClick}
-        />
+        <div className="flex flex-row items-center justify-center sm:justify-around mt-5">
+          <UilSearch
+            size={25}
+            className="text-white cursor-pointer transition ease-out hover:scale-125"
+            onClick={handleSearchClick}
+            style={{marginRight: '5px'}}
+          />
+          <UilLocationPoint
+            size={25}
+            className="text-white cursor-pointer transition ease-out hover:scale-125"
+            onClick={handleLocationClick}
+            style={{marginLeft: '5px'}}
+          />
+        </div>
       </div>
     </div>
   );
