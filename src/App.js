@@ -43,12 +43,12 @@ function App() {
     <div
       className={`mx-auto max-w-screen-md mt-4 py-5 px-32 bg-gradient-to-br  h-fit shadow-xl shadow-gray-400 ${formatBackground()}`}
     >
-      <Inputs setQuery={setQuery} units={units} setUnits={setUnits} />
+      <Inputs setQuery={setQuery} />
 
       {weather && (
         <div>
           <TimeAndLocation weather={weather} />
-          <TemperatureDetails weather={weather} />
+          <TemperatureDetails weather={weather} units={units} setUnits={setUnits}/>
 
           <Forecast title="hourly forecast" items={weather.hourly} />
           <Forecast title="daily forecast" items={weather.daily} />
