@@ -1,7 +1,7 @@
 import "./App.css";
 import Inputs from "./components/Inputs";
 import TimeAndLocation from "./components/TimeAndLocation";
-import TemperatureAndDetails from "./components/TemperatureAndDetails";
+import TemperatureDetails from "./components/TemperatureDetails";
 import Forecast from "./components/Forecast";
 import getFormattedWeatherData from "./services/weatherService";
 import { useEffect, useState } from "react";
@@ -48,7 +48,7 @@ function App() {
       {weather && (
         <div>
           <TimeAndLocation weather={weather} />
-          <TemperatureAndDetails weather={weather} />
+          <TemperatureDetails weather={weather} />
 
           <Forecast title="hourly forecast" items={weather.hourly} />
           <Forecast title="daily forecast" items={weather.daily} />

@@ -1,3 +1,7 @@
+/*
+This file was being used to impement WeatherAPI, due to increased complexity and limited time, it was kept aside to implement in the future.
+*/
+
 import { DateTime } from "luxon";
 
 const API_KEY = "afb3a4d27d684e4a9ab90541231602";

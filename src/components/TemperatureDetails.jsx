@@ -9,7 +9,7 @@ import {
 } from "@iconscout/react-unicons";
 import { formatToLocalTime, iconUrlFromCode } from "../services/weatherService";
 
-function TemperatureAndDetails({
+function TemperatureDetails({
   weather: {
     details,
     icon,
@@ -123,4 +123,4 @@ function TemperatureAndDetails({
   );
 }
 
-export default TemperatureAndDetails;
+export default TemperatureDetails;

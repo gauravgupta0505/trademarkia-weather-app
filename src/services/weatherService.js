@@ -1,7 +1,11 @@
+/*This uses the OpenWeatherAPI, easy implementation, less time consuming*/
+
+/*Using luxon for easy date time manipulation, formatting and implementation*/
 import { DateTime } from "luxon";
 
 const API_KEY = "1fa9ff4126d95b8db54f3897a208e91c";
 const BASE_URL = "https://api.openweathermap.org/data/2.5";
+
 
 // https://api.openweathermap.org/data/2.5/onecall?lat=48.8534&lon=2.3488&exclude=current,minutely,hourly,alerts&appid=1fa9ff4126d95b8db54f3897a208e91c&units=metric
 
@@ -45,8 +49,10 @@ const formatCurrentWeather = (data) => {
   };
 };
 
-const formatForecastWeather = (data) => {
+const formatPredictedWeather = (data) => {
   let { timezone, daily, hourly } = data;
+
+  // To obtain the daily forecast
   daily = daily.slice(1, 11).map((d) => {
     return {
       title: formatToLocalTime(d.dt, timezone, "ccc"),
@@ -55,6 +61,7 @@ const formatForecastWeather = (data) => {
     };
   });
 
+  // To obtain 5 hourly forecast
   hourly = hourly.slice(1, 6).map((d) => {
     return {
       title: formatToLocalTime(d.dt, timezone, "hh:mm a"),
@@ -79,7 +86,7 @@ const getFormattedWeatherData = async (searchParams) => {
     lon,
     exclude: "current,minutely,alerts",
     units: searchParams.units,
-  }).then(formatForecastWeather);
+  }).then(formatPredictedWeather);
 
   return { ...formattedCurrentWeather, ...formattedForecastWeather };
 };
